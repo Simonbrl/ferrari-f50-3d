@@ -1,8 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useState } from "react";
 import { LittleCar } from "./LittleCar";
-import "./carStyle.css";
 
 type Props = {
   setColors: (colors: string[]) => void;
@@ -19,20 +18,49 @@ export const CarCard = (props: Props) => {
         <div className="flex-1 lg:w-1/2">
           <div className="bg-gray-200 aspect-square rounded-md">
             <Canvas>
-              <ambientLight intensity={0.5} />
-              <spotLight position={[100, 15, 10]} angle={0.3} />
-              <LittleCar color={color} />
-              <OrbitControls
-                minPolarAngle={0}
-                maxPolarAngle={Math.PI / 2.1}
-                enableZoom={false}
+              <PerspectiveCamera
+                  makeDefault
+                  position={[0, 2, 7]}
+                  rotation={[-0.3, 0, 0]}
               />
+              <ambientLight intensity={0.5} />
+              <spotLight
+                  position={[0, 10, 0]}
+                  intensity={1}
+                  angle={Math.PI / 4}
+                  penumbra={0.2}
+              />
+              <spotLight
+                  position={[0, 0, 10]}
+                  intensity={1}
+                  angle={Math.PI / 4}
+                  penumbra={0.2}
+              />
+              <spotLight
+                  position={[0, 0, -10]}
+                  intensity={1}
+                  angle={Math.PI / 4}
+                  penumbra={0.2}
+              />
+              <spotLight
+                  position={[10, 0, 0]}
+                  intensity={1}
+                  angle={Math.PI / 4}
+                  penumbra={0.2}
+              />
+              <spotLight
+                  position={[-10, 0, 0]}
+                  intensity={1}
+                  angle={Math.PI / 4}
+                  penumbra={0.2}
+              />
+              <LittleCar color={color} />
             </Canvas>
           </div>
         </div>
         <div className="flex-1 lg:w-1/2 flex flex-col">
           <div className="border-b border-gray-200 pb-4 mb-4">
-            <h1 className="uppercase text-3xl text-gray-700 font-bold mb-8">
+            <h1 className="uppercase text-4xl text-gray-900 font-black mb-8">
               Ferrari F50 1995
             </h1>
             <p className="text-gray-500 text-sm">
@@ -91,7 +119,7 @@ export const CarCard = (props: Props) => {
                 className="flex-1 bg-red-800 w-4 h-4 rounded-full"
                 onClick={() => {
                   setColors(["from-red-500", "to-red-300"]),
-                    setColor("rosso_barchetta");
+                  setColor("rosso_barchetta");
                 }}
               ></button>
             </div>
@@ -104,7 +132,7 @@ export const CarCard = (props: Props) => {
                 className="flex-1 bg-yellow-500 w-4 h-4 rounded-full"
                 onClick={() => {
                   setColors(["from-yellow-300", "to-yellow-100"]),
-                    setColor("giallo_modena");
+                  setColor("giallo_modena");
                 }}
               ></button>
             </div>
@@ -119,7 +147,7 @@ export const CarCard = (props: Props) => {
                 className="flex-1 bg-gray-500 w-4 h-4 rounded-full"
                 onClick={() => {
                   setColors(["from-gray-300", "to-gray-100"]),
-                    setColor("argento_nurburgring");
+                  setColor("argento_nurburgring");
                 }}
               ></button>
             </div>
@@ -132,19 +160,17 @@ export const CarCard = (props: Props) => {
                 className="flex-1 bg-gray-900 w-4 h-4 rounded-full"
                 onClick={() => {
                   setColors(["from-gray-900", "to-gray-700"]),
-                    setColor("nero_daytona");
+                  setColor("nero_daytona");
                 }}
               ></button>
             </div>
           </div>
           <div className="flex flex-col lg:flex-row mt-auto justify-between items-center">
             <div className="font-bold text-2xl">
-              <span>3,000,000</span>
+              <span>10,000</span>
               <span>€</span>
             </div>
-            <button className="uppercase rounded-md bg-red-500 px-4 py-2 text-white">
-              Commander
-            </button>
+            <button className="uppercase rounded-md bg-red-500 px-4 py-2 text-white font-bold">Réserver un essai</button>
           </div>
         </div>
       </div>
