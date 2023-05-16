@@ -10,7 +10,7 @@ const App = () => {
   ]);
   const pages = 5;
   const height = window.innerHeight * pages;
-  const maxHeight = window.innerHeight * (pages - 1);
+  const maxHeight = window.innerHeight * (pages - 0.7);
   console.log(maxHeight);
 
   const [isVisible, setIsVisible] = useState(true);
