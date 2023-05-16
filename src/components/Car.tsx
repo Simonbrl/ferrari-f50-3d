@@ -9,7 +9,7 @@ const Car = () => {
 
   useFrame(() => {
     if (glbModel && glbRef.current) {
-      const rotation = window.scrollY * 0.005;
+      const rotation = window.scrollY * 0.002;
       glbRef.current.rotation.y = rotation;
     }
   });
