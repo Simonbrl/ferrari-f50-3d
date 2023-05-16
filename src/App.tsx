@@ -3,9 +3,11 @@ import Scene from "./components/Scene";
 
 const App = () => {
   return (
-    <Canvas>
-      <Scene />
-    </Canvas>
+    <div style={{ height: "2500px", backgroundColor: "grey" }}>
+      <Canvas style={{ position: "fixed" }}>
+        <Scene />
+      </Canvas>
+    </div>
   );
 };
 
