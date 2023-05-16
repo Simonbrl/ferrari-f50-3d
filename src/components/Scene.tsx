@@ -63,7 +63,7 @@ const Scene = () => {
         angle={Math.PI / 4}
         penumbra={0.2}
       />
-      <Car color={"rosso_corsa"} />
+      <Car />
     </>
   );
 };

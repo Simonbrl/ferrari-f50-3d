@@ -2,13 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
+}
+
+.radial-gradient {
   background: radial-gradient(
     circle,
-    /* #7b0000 0%,
-    #400000 100% */
     #323232 0%,
     #000000 100%
   );
