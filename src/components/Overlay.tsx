@@ -36,13 +36,13 @@ const Overlay = () => {
     return (
         pages.map((p: {id: number, title: string, subtitle: string, content?: string}, index: number) => (
             <motion.div key={index} 
-                className={`absolute top-1/2 text-white -translate-y-1/2 ${index % 2 === 0 ? "text-right right-0": "text-left left-0"} mx-32`} 
+                className={`absolute top-1/2 text-white -translate-y-1/2 ${index % 2 === 0 ? "text-right right-0": "text-left left-0"} mx-12 sm:mx-32`} 
                 initial={initial} animate={animate} exit={exit} 
                 style={{top: `${(window.innerHeight * index) + (window.innerHeight / 2)}px`}}
             >
-                <h1 className={`font-black ${p.content ? "text-4xl" : "text-8xl"} uppercase`}>{p.title}</h1>
-                <h2 className={`${p.content ? "text-2xl" : "text-6xl"} uppercase`}>{p.subtitle}</h2>
-                {p.content && <p className={`text-xl w-1/2 border-t border-gray-500 mt-2 pt-2${index % 2 === 0 ? " ml-auto" : ""}`}>{p.content}</p>}
+                <h1 className={`font-black ${p.content ? "text-4xl" : "text-4xl md:text-8xl"} uppercase`}>{p.title}</h1>
+                <h2 className={`${p.content ? "text-2xl" : "text-2xl md:text-6xl"} uppercase`}>{p.subtitle}</h2>
+                {p.content && <p className={`text-xl md:w-3/4 lg:w-1/2 border-t border-gray-500 mt-2 pt-2${index % 2 === 0 ? " ml-auto" : ""}`}>{p.content}</p>}
             </motion.div>
         ))
     );

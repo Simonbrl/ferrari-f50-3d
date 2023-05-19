@@ -14,7 +14,7 @@ export const CarCard = (props: Props) => {
 
   return (
     <div className="w-full max-w-5xl bg-white rounded-md shadow-lg mx-4 lg:mx-0">
-      <div className="flex flex-col gap-4 p-8 md:flex-row">
+      <div className="flex flex-col gap-4 p-8 lg:flex-row">
         <div className="flex-1 lg:w-1/2">
           <div className="bg-gray-200 aspect-square rounded-md relative">
             <Canvas>

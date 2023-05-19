@@ -24,7 +24,10 @@ const Scene = () => {
 
     useFrame(() => {
         if(window.scrollY >= 0 && window.scrollY < window.innerHeight){
-            camera.position.x = 2 - (window.scrollY / window.innerHeight) * 6;
+            //if screen width is less than 768px, move camera on y axis
+            if(window.innerWidth < 768)
+                camera.position.x = 1 - (window.scrollY / window.innerHeight) * 6;
+            else camera.position.x = 2 - (window.scrollY / window.innerHeight) * 6;            
         }
         if(window.scrollY >= window.innerHeight && window.scrollY < window.innerHeight * 2){
             camera.position.x = -3 + ((window.scrollY - window.innerHeight) / window.innerHeight) * 6;
