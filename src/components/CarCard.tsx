@@ -16,7 +16,7 @@ export const CarCard = (props: Props) => {
     <div className="w-full max-w-5xl bg-white rounded-md shadow-lg mx-4 lg:mx-0">
       <div className="flex flex-col gap-4 p-8 md:flex-row">
         <div className="flex-1 lg:w-1/2">
-          <div className="bg-gray-200 aspect-square rounded-md">
+          <div className="bg-gray-200 aspect-square rounded-md relative">
             <Canvas>
               <PerspectiveCamera
                   makeDefault
@@ -56,6 +56,9 @@ export const CarCard = (props: Props) => {
               />
               <LittleCar color={color} />
             </Canvas>
+            <a href="/viewer.html" className="absolute bottom-2 right-2 w-12 h-12">
+              <img src="ar_icon.png" alt="" />
+            </a>
           </div>
         </div>
         <div className="flex-1 lg:w-1/2 flex flex-col">
